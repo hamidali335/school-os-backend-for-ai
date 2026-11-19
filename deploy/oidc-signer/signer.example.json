@@ -1,0 +1,9 @@
+{
+  "issuer": "https://smsapi.teachassist.site/oidc",
+  "audience": "https://iam.googleapis.com/projects/687478394315/locations/global/workloadIdentityPools/school-os-pool/providers/school-os-server",
+  "subject": "school-os-api",
+  "kid": "school-os-2026-10",
+  "privateKeyFile": "/etc/school-os/oidc/private.pem",
+  "tokenFile": "/run/school-os-oidc/token",
+  "ttlSeconds": 600
+}

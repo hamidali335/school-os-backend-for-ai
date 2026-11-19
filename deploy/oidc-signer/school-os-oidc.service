@@ -1,0 +1,22 @@
+# Refreshes the School OS identity token for keyless FCM (docs/FCM_KEYLESS.md).
+# Runs as its own user: the API (PM2 user hamid) can read the token, never the signing key.
+[Unit]
+Description=School OS OIDC token signer (Workload Identity Federation)
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=school-os-oidc
+Group=school-os-oidc
+UMask=0027
+ExecStart=/usr/bin/node /opt/school-os-oidc/school-os-oidc-signer.mjs sign /etc/school-os/oidc/signer.json
+# Hardening: the signer only reads its key and config and writes the token directory.
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+ReadOnlyPaths=/etc/school-os/oidc
+ReadWritePaths=/run/school-os-oidc
+PrivateNetwork=yes
+RestrictAddressFamilies=AF_UNIX
+CapabilityBoundingSet=

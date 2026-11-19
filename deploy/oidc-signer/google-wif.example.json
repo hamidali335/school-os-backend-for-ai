@@ -1,0 +1,9 @@
+{
+  "universe_domain": "googleapis.com",
+  "type": "external_account",
+  "audience": "//iam.googleapis.com/projects/687478394315/locations/global/workloadIdentityPools/school-os-pool/providers/school-os-server",
+  "subject_token_type": "urn:ietf:params:oauth:token-type:jwt",
+  "token_url": "https://sts.googleapis.com/v1/token",
+  "service_account_impersonation_url": "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/school-os-fcm-sender@school-management-softwa-c42b4.iam.gserviceaccount.com:generateAccessToken",
+  "credential_source": { "file": "/run/school-os-oidc/token" }
+}

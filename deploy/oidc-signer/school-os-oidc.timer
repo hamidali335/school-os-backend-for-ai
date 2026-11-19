@@ -1,0 +1,12 @@
+# Signs a fresh 10-minute token every 5 minutes (and soon after boot).
+[Unit]
+Description=Refresh the School OS OIDC token every 5 minutes
+
+[Timer]
+OnBootSec=30s
+OnUnitActiveSec=5min
+AccuracySec=10s
+Persistent=true
+
+[Install]
+WantedBy=timers.target

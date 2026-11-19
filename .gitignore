@@ -1,0 +1,15 @@
+node_modules/
+dist/
+coverage/
+.env
+.env.*
+!.env.example
+storage/
+/backups/
+*.log
+storage-test/
+
+# Firebase / Google credentials: never commit (docs/PUSH_NOTIFICATIONS.md). Keep keys outside the repo.
+*firebase-adminsdk*.json
+*service-account*.json
+google-services.json
